@@ -1,18 +1,20 @@
 class Queue
-  def initialize(queue = [])
-    @queue = queue
+  
+  def initialize
+    @queue = []
   end
 
   def enqueue(el)
-    @queue.unshift(el)
+    @queue << el
+    el
   end
 
   def dequeue
-    @queue.pop
+    @queue.shift
   end
 
   def show
-    @queue
+    @queue.dup
   end
 
 end

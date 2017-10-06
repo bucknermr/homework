@@ -1,11 +1,12 @@
 class Stack
 
-  def initialize(stack = [])
-    @stack = stack
+  def initialize
+    @stack = []
   end
 
   def add(el)
     @stack << el
+    el
   end
 
   def remove
@@ -13,7 +14,7 @@ class Stack
   end
 
   def show
-    @stack
+    @stack.dup
   end
 
 end

@@ -4,33 +4,29 @@ class Map
   end
 
   def assign(key, val)
-    @map.each_with_index do |pair, idx|
-      if key == pair.first
-        return @map[idx] = [key, val]
-      end
-    end
-    @map << [key, val]
+    new_pair = [key, val]
+    search_index = @map.index { |pair| pair.first == key }
+    search_index ? @map[search_index] = new_pair : @map << new_pair
+    new_pair
   end
 
   def lookup(key)
-    @map.each do |pair|
-      return pair if pair.first == key
-    end
+    @map.each { |pair| return pair.last if pair.first == key }
     nil
   end
 
   def remove(key)
-    search_idx = nil
-    @map.each_with_index do |pair, idx|
-      if pair.first == key
-        search_idx = idx
-        break
-      end
-    end
-    @map.delete_at(search_idx) if search_idx
+    @map.reject! { |pair| pair.first == key }
   end
 
   def show
-    @map
+    deep_dup(@map)
   end
+
+  private
+
+  def deep_dup(arr)
+    arr.map { |el| el.is_a?(Array) ? deep_dup(el) : el }
+  end
+
 end
