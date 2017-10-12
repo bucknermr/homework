@@ -25,8 +25,6 @@ describe Dessert do
   end
 
   describe "#add_ingredient" do
-    # before(:each) { dessert.add_ingredient("chocolate") }
-    # before(:each) { dessert.add_ingredient("butter") }
 
     it "adds an ingredient to the ingredients array" do
       dessert.add_ingredient('chocolate')
