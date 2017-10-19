@@ -21,5 +21,11 @@ class Route < ApplicationRecord
 
   def better_drivers_query
     # TODO: your code here
+    all_drivers = {}
+
+    buses = self.buses.includes(:drivers)
+    buses.each { |bus| all_drivers[bus.id] = bus.drivers.pluck(:name) }
+
+    all_drivers
   end
 end
