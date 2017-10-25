@@ -22,3 +22,10 @@ section {
 .col-4-5 {
   width: 80%;
 }
+
+@media all and (max-width: 903px){
+
+  #sidebar, #main {
+    width: 100%;
+  }
+}
