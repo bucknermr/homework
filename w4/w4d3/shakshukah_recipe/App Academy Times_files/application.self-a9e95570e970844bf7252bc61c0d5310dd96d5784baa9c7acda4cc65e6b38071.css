@@ -1,0 +1,276 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+/* PHASE 0: Reset */
+/* line 3, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/base/reset.scss */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  outline: inherit;
+  font: 14px sans-serif;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: none;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: inherit;
+}
+
+/* line 22, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/base/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/base/reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 32, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/base/reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 47, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/base/reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Clearfix */
+/* line 54, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/base/reset.scss */
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/* Define application-wide selectors here!*/
+/* line 3, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/base/layout.scss */
+html {
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+  font-family: georgia, "times new roman", times, serif;
+  font-size: 12px;
+}
+
+/* line 11, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/base/layout.scss */
+body {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* line 17, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/base/layout.scss */
+button {
+  background-color: #6288a5;
+  border-color: #6288a5;
+  border-style: solid;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 1s;
+  font-family: arial, helvetica, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* line 31, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/base/layout.scss */
+button:hover {
+  background-color: #4d7b9f;
+  border-color: #265e8b;
+}
+
+/*
+	Header Rules
+*/
+/* line 40, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/base/layout.scss */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #e2e2e2;
+}
+
+/* line 46, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/base/layout.scss */
+.hr-top, .hr-bottom {
+  width: 100%;
+  margin: 0;
+}
+
+/* line 51, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/base/layout.scss */
+.hr-top {
+  height: 2px;
+  margin-bottom: 1px;
+}
+
+/* Attribute selector targeting all elements
+with a class attribute containing 'col-' */
+/* line 1, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_main_nav.scss */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  font-size: 14px;
+  font-family: arial, helvetica, sans-serif;
+}
+
+/* line 9, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_main_nav.scss */
+.left-nav > ul,
+.right-nav > ul {
+  display: flex;
+  align-items: center;
+}
+
+/* line 15, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_main_nav.scss */
+.left-nav > ul > li {
+  text-transform: uppercase;
+}
+
+/* line 20, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_main_nav.scss */
+.right-nav > ul > li {
+  text-transform: uppercase;
+  margin-left: 5px;
+}
+
+/* line 25, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_main_nav.scss */
+.right-nav > ul > li:last-of-type {
+  font-size: 16px;
+}
+
+/* line 30, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_main_nav.scss */
+.left-nav > ul > li:hover,
+.right-nav > ul > li:last-of-type:hover {
+  background-color: #f7f7f5;
+}
+
+/* line 35, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_main_nav.scss */
+.left-nav span {
+  margin: 20px;
+}
+
+/* line 39, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_main_nav.scss */
+.right-nav i {
+  margin-left: 15px;
+}
+
+/* line 1, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_masthead.scss */
+.masthead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid black;
+  position: relative;
+}
+
+/* line 9, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_masthead.scss */
+.language-nav {
+  position: static;
+  top: -15px;
+  left: calc(50% - (177.78px/2));
+  background: white;
+  border: 1px solid #e2e2e2;
+  border-bottom: none;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+/* line 21, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_masthead.scss */
+.language-nav a {
+  margin: 0 5px;
+  text-transform: uppercase;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 10px;
+  color: #6f6f6f;
+}
+
+/* line 29, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_masthead.scss */
+.language-nav ul {
+  display: flex;
+}
+
+/* line 33, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_masthead.scss */
+.logo {
+  max-width: 400px;
+  margin-top: 10px;
+}
+
+/* line 38, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_masthead.scss */
+.masthead-links {
+  display: flex;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 11px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 46, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_masthead.scss */
+.masthead-links li {
+  margin-left: 10px;
+  border-right: 1px solid #e2e2e2;
+}
+
+/* line 51, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_masthead.scss */
+.masthead-links li:last-child {
+  border-right: none;
+}
+
+/* line 55, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_masthead.scss */
+.masthead-links button {
+  background: none;
+  padding: 0px;
+  color: #000;
+  font-weight: normal;
+  border: none;
+  font-size: 16px;
+}
+
+/* line 64, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_masthead.scss */
+.masthead-links button:hover {
+  background-color: purple;
+}
+
+/* line 69, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_masthead.scss */
+.masthead-links a,
+.masthead-links button,
+.masthead-links time {
+  margin-right: 10px;
+}
+
+/* line 75, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_masthead.scss */
+.masthead-links i {
+  margin-right: 5px;
+}
+
+/* line 79, /Users/Matthew/app_academy/projects/w4/w4d3/aa_times/app/assets/stylesheets/components/_masthead.scss */
+.masthead-links strong {
+  color: green;
+}
