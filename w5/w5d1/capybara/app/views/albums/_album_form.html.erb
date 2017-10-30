@@ -1,0 +1,46 @@
+<!-- method = URL verb
+url -->
+<% url = (method == "create") ? albums_url : album_url(album) %>
+
+<% p album %>
+<% p "------------------------------------" %>
+<% p "------------------------------------" %>
+
+<form action="<%= url %>" method="post">
+  <% if method == "update" %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+  <%= auth %>
+
+
+  <select id="band_name" name="album[band_name]">
+
+    <option disabled <%= method == "create" ? "selected" : ""%> >Select A Band</option>
+
+    <% Band.all.each do |band| %>
+    <% if method == "update" %>
+      <% selected = album.band_name == band ? "selected" : "" %>
+    <% end %>
+    <option value="<%=band.name%>" <%= selected %> ><%= band.name %></option>
+
+    <% end %>
+  </select>
+
+  <label for="title">Album Title:</label>
+  <input id="title" type="text" name="album[title]" value="<%= album.title %>">
+
+  <label for="year">Year:</label>
+  <input id="year" type="text" name="album[year]" value="<%= album.year %>">
+
+  <label for="studio">Studio</label>
+  <input id="studio" type="radio" name="album[live]" value="false"
+    <%= album.live == false ? "checked" : "" %> >
+  <label for="live">Live</label>
+  <input id="live" type="radio" name="album[live]" value="true"
+    <%= album.live == true ? "checked" : "" %> >
+
+
+
+  <% submit = method == "create" ? "Create Album!" : "Update Album!" %>
+  <input type="submit" value="<%= submit %>">
+</form>

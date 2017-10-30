@@ -1,0 +1,14 @@
+<% url = method == "create" ? bands_url : band_url %>
+
+<form action="<%= url %>" method="post">
+  <% if method == "update" %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+  <%= auth %>
+
+  <label for="name">Band Name:</label>
+  <input id="name" type="text" name="band[name]" value="<%= band.name %>">
+
+  <% submit = method == "create" ? "Create Band!" : "Update Band!" %>
+  <input type="submit" value="<%= submit %>">
+</form>

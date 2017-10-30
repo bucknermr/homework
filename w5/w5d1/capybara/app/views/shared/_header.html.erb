@@ -1,0 +1,17 @@
+<ul>
+  <% if logged_in? %>
+  <li>
+    class="email_header"><%= current_user.email %>
+  </li>
+  <li>
+    <%= button_to "Log Out", sessions_url, method: "delete", form_class: "log_out" %>
+  </li>
+  <% else %>
+  <li>
+    <%= button_to "Log In", new_sessions_url, method: "get" , form_class: "login" %>
+  </li>
+  <li>
+    <%= button_to "Sign Up", new_user_url, method: "get", form_class: "sign_up" %>
+  </li>
+  <% end %>
+</ul>
