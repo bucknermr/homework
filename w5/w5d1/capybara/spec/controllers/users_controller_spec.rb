@@ -13,7 +13,7 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe 'POST #create' do
-    it { should validate_length_of(:password).is_at_least(6) }
     it 'validates the presence of the user\'s email and password'
+    it 'should validate that the length of the password is at least 6 }
   end
 end
