@@ -23,6 +23,7 @@ View.prototype.exercise1 = function () {
   //Result: Every square should turn orange (we already have a CSS rule)
 
   //your code here!
+  $('.square').addClass("orange");
 };
 
 View.prototype.exercise2 = function () {
@@ -30,6 +31,7 @@ View.prototype.exercise2 = function () {
   //Result: Every square vanishes
 
   //your code here!
+  $('.square').remove();
 };
 
 View.prototype.exercise3 = function () {
@@ -37,6 +39,7 @@ View.prototype.exercise3 = function () {
   //Result: An <h1> with the text 'i love jquery' appears under the grid.
 
   //your code here!
+
 };
 
 View.prototype.exercise4 = function () {
@@ -65,6 +68,10 @@ View.prototype.exercise6 = function () {
   //hint: use window._randomColorString() (defined at top) to get a random color!
 
   //your code here!
+  $('.square').each( () => {
+    console.log(this);
+    this.css("background-color", window._randomColorString());
+  });
 };
 
 View.prototype.exercise7 = function(){
@@ -75,6 +82,9 @@ View.prototype.exercise7 = function(){
   //rainbow.
 
   //your code here!
+  $('.square').on("mouseover", event => {
+    console.log($(event.target).css('background-color'));
+  });
 };
 
 
