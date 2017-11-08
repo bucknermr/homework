@@ -31,6 +31,7 @@ View.prototype.exercise2 = function () {
   //Result: Every square vanishes
 
   //your code here!
+  console.log("test");
   $('.square').remove();
 };
 
@@ -39,7 +40,11 @@ View.prototype.exercise3 = function () {
   //Result: An <h1> with the text 'i love jquery' appears under the grid.
 
   //your code here!
-
+  console.log("test");
+  // const $h1 = $("<h1></h1>");
+  // $h1.text("i love jquery");
+  // console.log($h1);
+  // $('#easel').append($h1);
 };
 
 View.prototype.exercise4 = function () {
