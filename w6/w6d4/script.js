@@ -19,7 +19,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // adding SF places as list items
 
   // --- your code here!
+  const addListItem = (e) => {
+    e.preventDefault();
+    const ul = document.getElementById("sf-places");
+    const li = document.createElement("li");
+    li.textContent = document.querySelector(".favorite-input");
+    ul.appendChild(li);
+  };
 
+  document
+    .querySelectorAll(".list-container form")
+    .forEach((submit) => {
+      submit.addEventListener("submit", addListItem);
+      // submit.addEventListener("submit", (event) => addListItem(event));
+    });
 
 
   // adding new photos
