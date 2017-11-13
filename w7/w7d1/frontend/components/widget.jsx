@@ -24,6 +24,7 @@ class Widget extends React.Component {
         // tell the store to update with the new base currency and rates;
         // use the action creator 'selectCurrency' to build the object to
         // be dispatched
+
         this.props.store.dispatch(
           this.selectCurrency(resp.base, resp.rates)
         );

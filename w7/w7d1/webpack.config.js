@@ -5,7 +5,7 @@ module.exports = {
   context: __dirname,
   entry: "./frontend/entry.jsx",
   output: {
-    path: path.resolve(__dirname),  
+    path: path.resolve(__dirname),
     filename: "bundle.js"
   },
   module: {
@@ -20,7 +20,7 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-maps',
+  devtool: 'source-map',
   resolve: {
     extensions: [".js", '.jsx', '*'],
   }
