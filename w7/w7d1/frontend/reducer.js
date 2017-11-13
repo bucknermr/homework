@@ -1,5 +1,3 @@
-import merge from 'lodash/merge';
-
 const initialState = {
   baseCurrency: "Please select",
   rates: {}
@@ -16,9 +14,6 @@ const reducer = (state = initialState, action) => {
     default:
       return state;
     }
-
-      // const newState = initialState.merge(state, action.currency);
-      // break;
 };
 
 export default reducer;
