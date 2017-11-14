@@ -12889,9 +12889,21 @@ var _root2 = _interopRequireDefault(_root);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function addLoggingToDispatch(store) {
+  var dispatch = store.dispatch;
+  return function (action) {
+    console.log("Old state:", store.getState());
+    console.log("Action:", action);
+    dispatch(action);
+    console.log("New state:", store.getState());
+  };
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   var preloadedState = localStorage.state ? JSON.parse(localStorage.state) : {};
   var store = (0, _store2.default)(preloadedState);
+
+  store.dispatch = addLoggingToDispatch(store);
 
   var root = document.getElementById('content');
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
