@@ -9,7 +9,7 @@ const GiphysIndex = (props) => {
       {
         giphys.map(giphy => (
           <li key ={giphy.id} >
-            <GiphysIndexItem className="giphy-li" url={giphy.url} />  
+            <GiphysIndexItem className="giphy-li" url={giphy.embed_url} />  
           </li>
         ))
       }

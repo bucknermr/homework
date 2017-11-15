@@ -13,13 +13,13 @@ class GiphysSearch extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ searchTerm: event.value });
+    this.setState({ searchTerm: event.target.value });
   }
 
   handleSubmit(event) {
-    const { fetchSearchGiphys } = this.props;
     event.preventDefault();
-    fetchSearchGiphys(event.value)
+    const { fetchSearchGiphys } = this.props;
+    fetchSearchGiphys(this.state.searchTerm)
       .then(this.resetInput);
   }
 
@@ -28,7 +28,6 @@ class GiphysSearch extends React.Component {
   }
 
   render() {
-    // const { handleChange, handleSubmit } = this.props;
     return (
       <div>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit} >

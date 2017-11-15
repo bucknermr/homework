@@ -20,5 +20,4 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   window.fetchSearchGiphys = APIUtil.fetchSearchGiphys;
   window.receiveSearchGiphys = receiveSearchGiphys;
-  window.fetchSearchGiphys = fetchSearchGiphys;
 });

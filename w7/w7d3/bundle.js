@@ -12157,7 +12157,7 @@ var GiphysIndex = function GiphysIndex(props) {
       return _react2.default.createElement(
         'li',
         { key: giphy.id },
-        _react2.default.createElement(_giphys_index_item2.default, { className: 'giphy-li', url: giphy.url })
+        _react2.default.createElement(_giphys_index_item2.default, { className: 'giphy-li', url: giphy.embed_url })
       );
     })
   );
@@ -12167,9 +12167,26 @@ exports.default = GiphysIndex;
 
 /***/ }),
 /* 109 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: Unterminated JSX contents (13:330)\n\n\u001b[0m \u001b[90m 11 | \u001b[39m\n \u001b[90m 12 | \u001b[39m\u001b[90m// <iframe src=\"https://giphy.com/embed/xvV3NUMbSTqSY\" width=\"480\" height=\"228\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe><p><a href=\"https://giphy.com/gifs/like-job-fighter-xvV3NUMbSTqSY\">via GIPHY</a></p>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 | \u001b[39m\u001b[90m// <div style=\"width:100%;height:0;padding-bottom:47%;position:relative;\"><iframe src=\"https://giphy.com/embed/xvV3NUMbSTqSY\" width=\"100%\" height=\"100%\" style=\"position:absolute\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe></div><p><a href=\"https://giphy.com/gifs/like-job-fighter-xvV3NUMbSTqSY\">via GIPHY</a></p>\u001b[39m\n \u001b[90m    | \u001b[39m                                                                                                                                                                                                                                                                                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[33mGiphysIndexItem\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 15 | \u001b[39m\u001b[0m\n");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(17);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var GiphysIndexItem = function GiphysIndexItem(props) {
+  console.log(props);
+  return _react2.default.createElement('iframe', { src: props.url });
+};
+exports.default = GiphysIndexItem;
 
 /***/ }),
 /* 110 */
@@ -12219,15 +12236,15 @@ var GiphysSearch = function (_React$Component) {
   _createClass(GiphysSearch, [{
     key: 'handleChange',
     value: function handleChange(event) {
-      this.setState({ searchTerm: event.value });
+      this.setState({ searchTerm: event.target.value });
     }
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(event) {
+      event.preventDefault();
       var fetchSearchGiphys = this.props.fetchSearchGiphys;
 
-      event.preventDefault();
-      fetchSearchGiphys(event.value).then(this.resetInput);
+      fetchSearchGiphys(this.state.searchTerm).then(this.resetInput);
     }
   }, {
     key: 'resetInput',
@@ -12237,7 +12254,6 @@ var GiphysSearch = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      // const { handleChange, handleSubmit } = this.props;
       return _react2.default.createElement(
         'div',
         null,
@@ -12340,7 +12356,6 @@ document.addEventListener('DOMContentLoaded', function () {
   window.store = store;
   window.fetchSearchGiphys = APIUtil.fetchSearchGiphys;
   window.receiveSearchGiphys = _giphy_actions.receiveSearchGiphys;
-  window.fetchSearchGiphys = _giphy_actions.fetchSearchGiphys;
 });
 
 /***/ }),
